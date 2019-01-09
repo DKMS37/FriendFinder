@@ -1,7 +1,7 @@
 // Dependencies
 // =============================================================
 var express = require("express");
-var path = require("path")
+// var path = require("path")
 
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
@@ -16,7 +16,7 @@ app.use(express.json());
 // ROUTER
 // The below points our server to a series of "route" files.
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
-// require('./app/routing/apiRoutes')(app);
+require('./app/routing/apiRoutes')(app);
 require('./app/routing/htmlRoutes.js')(app);
 
 // Starts the server to begin listening

@@ -145,7 +145,7 @@ var friendsArray = [
     },
     {
         name: "Myla Cheng",
-        photo: "downlhttps://assets.rebelcircus.com/blog/wp-content/uploads/2016/11/Unknown9.jpgoad-1.jpg",
+        photo: "https://mail-order-bride.com/images/1517332193.jpg",
         scores: [
             5,
             3,
