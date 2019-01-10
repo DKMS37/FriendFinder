@@ -1,6 +1,6 @@
 
 var friends = require('../data/friends');
-console.log(friends);
+// console.log(friends);
 module.exports = function(app) {
 	//whenever the user goes to the api/friends url go ahead and display the tableData in json format
 	app.get('/api/friends', function(req, res) {
