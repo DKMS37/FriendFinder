@@ -10,19 +10,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!-- Font Awesome Glyphicons -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
     <!-- Chosen -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
 </head>
 
-<body>
+<body style="background-image: url(https://tatica.fedorapeople.org/Themes/F12/wallpaper-mosaico2.svg)">
 
     <div class="container" style="background-color: lemonchiffon">
 
-        <h1><i style="color:dodgerblue" class="fa fa-facebook-square"><strong style="color:blue"> Survey Questions</strong></h1></i>
+        <h1><i style="color:dodgerblue" class="fas fa-users"><strong style="color:blue"> Survey Questions</strong></h1></i>
         <hr>
 
         <h3><strong>About You</strong></h3>
@@ -175,7 +175,7 @@
     <br>
 
     <!-- Submit Button -->
-    <button type="submit" class="btn btn-primary btn-sml btn-block" id="submit"><i class="fa fa-check-circle"
+    <button type="submit" class="submit btn btn-primary btn-sml btn-block" id="submit"><i class="fa fa-check-circle"
             aria-hidden="true"></i>
         <strong>
             <h4 style="color: chartreuse">Submit</h4>
@@ -184,8 +184,9 @@
     <hr>
     <footer class="footer text-center">
         <div class="container">
-            <p><a href='/api/friends'>API Friends List</a> | <a href="https://github.com/_WRONG_CLICKED---GO_BACK.../_The_Real_Github_Repo_is_THE_RIGHT_ONE.">GitHub Repo</a> | <a href="https://github.com/DKMS37/friendfinder">The Real GitHub
-                        Repo</a></p>
+            <p><a style="color: cyan" href='/api/friends'>API Friends List</a> | <a style="color: cyan" href="https://github.com/_WRONG_CLICKED_<--_GO_BACK.../_The_Real_Github_Repo_is_THE_RIGHT_ONE.">GitHub
+                    Repo</a> | <a style="color: cyan" href="https://github.com/DKMS37/friendfinder">The Real GitHub
+                    Repo</a></p>
         </div>
     </footer>
 
@@ -201,9 +202,9 @@
                     <button type="button" class="close" data-dismiss="modal">×</button>
                     <h2 class="modal-title"><strong>Best Match</strong></h2>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body img-fluid">
                     <h2 id="match-name"></h2>
-                    <img id="match-img" src="" alt="">
+                    <img class="img-fluid" id="match-img" src="" alt="">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -213,7 +214,43 @@
         </div>
     </div>
 
+    <script>
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
 
+            //Creates object with all the answers from the user.
+            var newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [
+                    $("#question1").val(),
+                    $("#question2").val(),
+                    $("#question3").val(),
+                    $("#question4").val(),
+                    $("#question5").val(),
+                    $("#question6").val(),
+                    $("#question7").val(),
+                    $("#question8").val(),
+                    $("#question9").val(),
+                    $("#question10").val()
+                ]
+            };
+
+            //Call the POST and sends object.
+            $.post('/api/friends', newFriend)
+                //Receives confirmation of POST + best match user and image.
+                .done(function (data) {
+
+                    $("#match-name").html(data.matchName);
+                    $("#match-img").attr("src", data.matchImage);
+                    // Pop open the modal dialog
+                    $('#results-modal').modal('toggle');
+
+                });
+
+        });
+
+    </script>
 </body>
 
 </html>
