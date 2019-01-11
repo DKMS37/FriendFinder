@@ -81,7 +81,7 @@ var friends = [
     },
     {
         "name": "Sarah Shahi",
-        "photo": "http://www.latina.com/sites/default/files/sarah_shahi_latina_actress_0322_400_0.jpg",
+        "photo": "https://www.latina.com/sites/default/files/sarah_shahi_latina_actress_0322_400_0.jpg",
         "scores": [
             "5",
             "2",
@@ -145,7 +145,7 @@ var friends = [
     },
     {
         "name": "Myla Cheng",
-        "photo": "http://i2.asntown.net/h3/Japan/11/secret-being-young-for-women/Japanese-housewife-MasakoMizutani-beauty05.jpg",
+        "photo": "https://i2.asntown.net/h3/Japan/11/secret-being-young-for-women/Japanese-housewife-MasakoMizutani-beauty05.jpg",
         "scores": [
             "5",
             "5",
