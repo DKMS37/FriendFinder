@@ -131,21 +131,21 @@ var friends = [
         "name": "Cheryl Winstone",
         "photo": "https://i.pinimg.com/originals/f5/87/34/f587347e06d6c3c9c0a3fc9675e6bdda.jpg",
         "scores": [
+            "1",
             "2",
+            "1",
             "2",
+            "1",
             "2",
+            "1",
             "2",
-            "2",
-            "2",
-            "2",
-            "2",
-            "2",
+            "1",
             "2"
         ]
     },
     {
         "name": "Myla Cheng",
-        "photo": "https://i2.asntown.net/h3/Japan/11/secret-being-young-for-women/Japanese-housewife-MasakoMizutani-beauty05.jpg",
+        "photo": "https://i.pinimg.com/236x/66/2a/67/662a67896511b1e540f79971f681f13d--body-measurements-female-models.jpg",
         "scores": [
             "5",
             "5",
